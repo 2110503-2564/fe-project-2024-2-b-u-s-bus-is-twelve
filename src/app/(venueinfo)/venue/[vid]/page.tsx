@@ -5,6 +5,15 @@ export default async function VenueDetailPage( {params} : {params: {vid:string}}
     
     const venueDetail = await getVenue(params.vid)
     
+    /**
+     * Mock Data for Demonstration Only
+     */
+
+    // const mockVenueRepo = new Map()
+    // mockVenueRepo.set("001", {name: "The Bloom Pavilion", image: "/img/bloom.jpg"})
+    // mockVenueRepo.set("002", {name: "Spark Space", image: "/img/sparkspace.jpg"})
+    // mockVenueRepo.set("003", {name: "The Grand Table", image: "/img/grandtable.jpg"})
+
     return(
         <main className="text-center p-5">
 
@@ -30,5 +39,5 @@ export default async function VenueDetailPage( {params} : {params: {vid:string}}
 }
 
 export async function generateStaticParams() {
-    return [ {vid: '001'}, {vid: '002'}, {vid: '003'} ]
+    return [ {cid: '001'}, {cid: '002'}, {cid: '003'} ]
 }
