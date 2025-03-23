@@ -17,7 +17,7 @@ export default function Banner2 () {
             />
             <div className="relative top-[150px] z-20 text-center text-white">
             <h1 className="text-center text-4xl md:text-4xl lg:text-5xl font-bold leading-tight ml-20 mt-5 font-playfair">
-                Let's Book Your Dream Hotel Today
+                Let's Book Your Dream Hotel Today!
             </h1>
             </div>
         </div>
