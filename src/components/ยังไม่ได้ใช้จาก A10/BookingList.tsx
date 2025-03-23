@@ -12,7 +12,7 @@ export default function BookingList() {
     return (
         <>
             {bookItems.length === 0 ? (
-                <p className="text-lg text-gray-500 text-center">No Venue Booking</p>
+                <p className="text-lg text-gray-500 text-center">No Hotel Booking</p>
             ) : (
                 bookItems.map((bookingItem) => (
                     <div

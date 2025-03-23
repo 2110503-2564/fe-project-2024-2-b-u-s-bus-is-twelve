@@ -34,9 +34,12 @@ export default function CardPanel() {
      */
 
     const mockVenueRepo = [
-        {vid: "001", name: "The Bloom Pavilion", image: "/img/bloom.jpg"},
-        {vid: "002", name: "Spark Space", image: "/img/sparkspace.jpg"},
-        {vid: "003", name: "The Grand Table", image: "/img/grandtable.jpg"},
+        {hid: "001", name: "安娜 HOTEL", image: "/img/cover.jpg"},
+        {hid: "002", name: "Merry House", image: "/img/cover2.jpg"},
+        {hid: "003", name: "Cozy Days Hotel", image: "/img/cover3.jpg"},
+        {hid: "004", name: "Civic Haus", image: "/img/cover4.jpg"},
+        {hid: "005", name: "Cozy House", image: "/img/cover5.jpg"},
+        {hid: "006", name: "Seabreeze Inn", image: "/img/cover6.jpg"}
     ]
 
     return(
@@ -52,7 +55,7 @@ export default function CardPanel() {
             </div>
 
             <div className="w-full font-medium, text-xl">
-                Venue List with Ratings: { venueList.size }
+                Hotel List with Ratings: { venueList.size }
             </div>
 
             <div className="text-lg">

@@ -12,6 +12,7 @@ export default function Booking() {
 
     const [nameLastname, setNameLastname] = useState("");
     const [tel, setTel] = useState("");
+    const [night, setNight] = useState(1);
     const [venue, setVenue] = useState("");
     const [bookDate, setBookDate] = useState<Dayjs | null>(null);
 
@@ -24,6 +25,7 @@ export default function Booking() {
         dispatch(addBooking({
             nameLastname,
             tel,
+            night,
             venue,
             bookDate: bookDate.format("YYYY-MM-DD"),
         }));
@@ -32,13 +34,14 @@ export default function Booking() {
 
         setNameLastname("");
         setTel("");
+        setNight(1);
         setVenue("");
         setBookDate(null);
     };
 
     return (
         <main className="w-full flex flex-col items-center space-y-4 py-3">
-            <div className="text-xl font-medium">Venue Booking</div>
+            <div className="text-xl font-medium">Hotel Booking</div>
 
             <div className="flex flex-col bg-slate-100 rounded-lg space-y-4 w-fit px-5 py-5">
                 <TextField
@@ -57,15 +60,26 @@ export default function Booking() {
                     onChange={(e) => setTel(e.target.value)}
                 />
 
+                <TextField
+                    name="Night"
+                    label="Night"
+                    variant="standard"
+                    value={night}
+                    onChange={(e) => setNight(e.target.value)}
+                />
+
                 <Select
                     variant="standard"
-                    name="venue"
+                    name="Hotel"
                     value={venue}
                     onChange={(e) => setVenue(e.target.value)}
                     className="h-[2em] w-full"
                 >
-                    <MenuItem value="Bloom">The Bloom Pavilion</MenuItem>
-                    <MenuItem value="Spark">Spark Space</MenuItem>
+                    <MenuItem value="Bloom">安娜 HOTEL</MenuItem>
+                    <MenuItem value="Spark">Merry House</MenuItem>
+                    <MenuItem value="GrandTable">Cozy Days Hotel</MenuItem>
+                    <MenuItem value="Bloom">Civic Haus</MenuItem>
+                    <MenuItem value="Spark">Cozy House</MenuItem>
                     <MenuItem value="GrandTable">The Grand Table</MenuItem>
                 </Select>
 
@@ -81,10 +95,10 @@ export default function Booking() {
             <Button
                 variant="contained"
                 color="primary"
-                name="Book Venue"
+                name="Book Hotel"
                 onClick={handleBooking}
             >
-                Book Venue
+                Book Hotel
             </Button>
         </main>
     );

@@ -43,7 +43,7 @@ export default function Gallery() {
 
         {/* Gallery Image 6 */}
         <div className="relative overflow-hidden rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
-          <img src="/img/cover.jpg" alt="Gallery Image 6" className="w-full h-64 object-cover" />
+          <img src="/img/cover6.jpg" alt="Gallery Image 6" className="w-full h-64 object-cover" />
           <div className="absolute inset-0 bg-black opacity-0 hover:opacity-50 transition-all duration-300"></div>
         </div>
       </div>

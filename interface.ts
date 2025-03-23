@@ -22,6 +22,7 @@ export  interface VenueJson {
 export interface BookingItem {
   nameLastname: string;
   tel: string;
+  night:number;
   venue: string;
   bookDate: string;
 }
