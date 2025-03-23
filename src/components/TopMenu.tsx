@@ -11,27 +11,43 @@ export default async function TopMenu() {
 
     return (
         <div className={styles.menucontainer}>
-            <div className="flex justify-between items-center w-full">
-                <div className="absolute left-0 h-full flex items-center px-2">
+            <div className="flex justify-between items-center w-full" >
+
+            <div className="flex items-center space-x-1 ml-20">
+            <Image 
+                src="/img/logo.png" 
+                alt="logo" 
+                width={25} 
+                height={25} 
+                className="object-contain" 
+            />
+            <span className="w-[130px] text-center my-auto font-[sans-serif] text-[15pt] font-semibold text-white">BUSTRAVEL</span>
+            </div>
+
+                <div className="absolute right-10 h-full flex items-center gap-x-1">
+
+                <TopMenuItem title='Home' pageRef='/' className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt]"/>
+
+                <TopMenuItem title='Explore' pageRef='/viewhotels' className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt]"/>
+
+                <TopMenuItem title='Booking' pageRef='/booking' className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt]"/>
+
+                {/* <TopMenuItem title='My Booking' pageRef='/mybooking' />  */}
+                
                     {session ? (
-                        <Link href='/api/auth/signout' className="text-cyan-600 text-sm">
+                        <Link href='/api/auth/signout' className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt]">
                             Sign-Out of {session.user?.name}
                         </Link>
                     ) : (
-                        <Link href='/api/auth/signin' className="text-cyan-600 text-sm">
+                        <Link href='/api/auth/signin' className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt]">
                             Sign-In
                         </Link>
                     )}
-
-                <TopMenuItem title='My Booking' pageRef='/mybooking' /> 
-                
+                    
                 </div>
 
             </div>
 
-            <TopMenuItem title='Booking' pageRef='/booking'/>
-
-            <Image src={'/img/logo.png'} className={styles.logoimg} alt='logo' width={0} height={0} sizes='100vh' />
         </div>
     );
 }

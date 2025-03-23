@@ -1,9 +1,15 @@
-import styles from './topmenu.module.css'
-import Link from 'next/link'
+import styles from './topmenu.module.css';
+import Link from 'next/link';
 
-export default function TopMenuItem( { title, pageRef } : { title:string, pageRef:string }) {
-    return(
-        <Link href={pageRef} className={styles.itemcontainer}>
+interface TopMenuItemProps {
+    title: string;
+    pageRef: string;
+    className?: string; 
+}
+
+export default function TopMenuItem({ title, pageRef, className }: TopMenuItemProps) {
+    return (
+        <Link href={pageRef} className={`${className} block`}>
             {title}
         </Link>
     );
