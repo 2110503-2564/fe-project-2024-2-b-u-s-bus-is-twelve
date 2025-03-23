@@ -76,12 +76,12 @@ export default function Booking() {
                     onChange={(e) => setVenue(e.target.value)}
                     className="h-[2em] w-full"
                 >
-                    <MenuItem value="Bloom">安娜 HOTEL</MenuItem>
-                    <MenuItem value="Spark">Merry House</MenuItem>
-                    <MenuItem value="GrandTable">Cozy Days Hotel</MenuItem>
-                    <MenuItem value="Bloom">Civic Haus</MenuItem>
-                    <MenuItem value="Spark">Cozy House</MenuItem>
-                    <MenuItem value="GrandTable">The Grand Table</MenuItem>
+                    <MenuItem value="AnnaHotel">安娜 HOTEL</MenuItem>
+                    <MenuItem value="MerryHouse">Merry House</MenuItem>
+                    <MenuItem value="Cozy Days Hotel">Cozy Days Hotel</MenuItem>
+                    <MenuItem value="Civic Haus">Civic Haus</MenuItem>
+                    <MenuItem value="CozyHouse">Cozy House</MenuItem>
+                    <MenuItem value="SeabreezeInn">Seabreeze Inn</MenuItem>
                 </Select>
 
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
