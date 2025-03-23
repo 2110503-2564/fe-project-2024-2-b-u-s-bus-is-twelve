@@ -29,7 +29,7 @@ export function VlogPlayer({ vdoSrc }: VlogPlayerProps) {
 
       <div className="ml-20 text-white max-w-sm ">
         <h3 className="mt-4 text-3xl font-semibold font-playfair text-black">Book Your Perfect Stay</h3>
-        <p className="mt-4 py-2 text-xl text-black">
+        <p className="mt-4 py-2 text-xl  text-gray-800">
           Discover the best deals and unforgettable experiences with just a few clicks. 
           Whether you're seeking relaxation or adventure, we've got the perfect hotel for you!
         </p>

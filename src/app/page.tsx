@@ -5,6 +5,7 @@ import Card from "@/components/Card";
 import CardPanel from "@/components/CardPanel";
 import AboutUs from "@/components/AboutUs";
 import Video from "@/components/Video";
+import RecommendHotel from "@/components/RecommendHotel";
 
 export default function Home() {
   return (
@@ -12,6 +13,8 @@ export default function Home() {
       <Banner />
       <AboutUs />
       <Video />
+      <br />
+      <RecommendHotel />
     </main>
   );
 }

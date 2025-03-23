@@ -7,7 +7,7 @@ export default function AboutUs(){
                     perfect stay in just a few clicks! <br />
                 </div>
 
-                <div className="mt-4 py-2 text-xl">
+                <div className="mt-4 py-2 text-xl  text-gray-800">
                     Whether you’re looking for a luxurious getaway, a cozy retreat, or a budget-friendly option, we’ve got you covered. 
                     Our platform ensures the best deals and a seamless booking experience, so you can focus on enjoying your trip.
                     <br />
