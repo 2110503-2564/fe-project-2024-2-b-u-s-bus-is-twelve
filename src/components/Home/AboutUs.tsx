@@ -1,4 +1,10 @@
+"use client";
+import { useRouter } from "next/navigation";
+
 export default function AboutUs(){
+
+    const router = useRouter(); 
+
     return(
         <div className="flex items-center justify-between py-10 px-20 bg-white">
             <div className="w-2/3 pr-10">
@@ -16,7 +22,7 @@ export default function AboutUs(){
                 </div>
 
                 <div className="mt-6">
-                <button className="bg-white border border-black font-semibold py-2 px-4 rounded hover:bg-black hover:text-white hover:shadow-lg hover:border-transparent text-xl transform transition-all duration-200 hover:scale-105">
+                <button className="bg-white border border-black font-semibold py-2 px-4 rounded hover:bg-black hover:text-white hover:shadow-lg hover:border-transparent text-xl transform transition-all duration-200 hover:scale-105" onClick={() => router.push("/viewhotels")}>
                     Booking Now!
                 </button>
                 </div>
@@ -27,7 +33,7 @@ export default function AboutUs(){
                 <img src="/img/aboutUs.png" alt="About Us" className="w-[80%] h-auto" />
             </div>
         </div>
-        
+
 
     );
 }

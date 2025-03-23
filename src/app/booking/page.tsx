@@ -65,12 +65,13 @@ export default function Booking() {
                     label="Night"
                     variant="standard"
                     value={night}
-                    onChange={(e) => setNight(e.target.value)}
+                    onChange={(e) => setNight(Number(e.target.value))}
                 />
 
                 <Select
                     variant="standard"
                     name="Hotel"
+                    label="Select Hotel"
                     value={venue}
                     onChange={(e) => setVenue(e.target.value)}
                     className="h-[2em] w-full"
