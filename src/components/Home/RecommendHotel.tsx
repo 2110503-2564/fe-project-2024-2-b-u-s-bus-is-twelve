@@ -66,7 +66,7 @@ export default function RecommendHotel() {
                     >
                         {hotels.concat(hotels).map((hotel, index) => (
                             <div key={index} className="w-[50%] p-5 flex-shrink-0">
-                                <div className="relative rounded-lg overflow-hidden shadow-lg">
+                                <div className="relative rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:scale-105">
                                     {/* กำหนดอัตราส่วนของรูปภาพให้เท่ากัน */}
                                     <div className="relative w-full aspect-[4/5]">
                                         <Image

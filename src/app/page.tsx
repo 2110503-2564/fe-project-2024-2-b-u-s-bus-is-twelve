@@ -1,11 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import Banner from "@/components/Banner"
-import Card from "@/components/Card";
-import CardPanel from "@/components/CardPanel";
-import AboutUs from "@/components/AboutUs";
-import Video from "@/components/Video";
-import RecommendHotel from "@/components/RecommendHotel";
+import Banner from "@/components/Home/Banner"
+import Card from "@/components/ยังไม่ได้ใช้จาก A10/Card";
+import CardPanel from "@/components/ยังไม่ได้ใช้จาก A10/CardPanel";
+import AboutUs from "@/components/Home/AboutUs";
+import Video from "@/components/Home/Video";
+import RecommendHotel from "@/components/Home/RecommendHotel";
 
 export default function Home() {
   return (

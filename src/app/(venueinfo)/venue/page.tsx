@@ -1,5 +1,5 @@
-import CardPanel from "@/components/CardPanel";
-import VenueCatalog from "@/components/VenueCatalog";
+import CardPanel from "@/components/ยังไม่ได้ใช้จาก A10/CardPanel";
+import VenueCatalog from "@/components/ยังไม่ได้ใช้จาก A10/VenueCatalog";
 import getVenues from "@/libs/getVenues";
 import { LinearProgress } from "@mui/material";
 import { Suspense } from "react";

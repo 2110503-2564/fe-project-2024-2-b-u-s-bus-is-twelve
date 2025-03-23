@@ -2,7 +2,7 @@
 import { useReducer, useState } from "react";
 import Card from "./Card";
 import Link from "next/link";
-import { VenueItem, VenueJson } from "../../interface"
+import { VenueItem, VenueJson } from "../../../interface"
 
 export default function CardPanel() {
 
