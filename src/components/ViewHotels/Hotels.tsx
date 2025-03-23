@@ -1,54 +1,61 @@
-'use client'
+"use client";
 import { MapPin } from "lucide-react";
 import { useState } from "react";
+import { useRouter } from "next/navigation"; // ✅ App Router
 
 export default function Hotels() {
-  const [selectedHotel, setSelectedHotel] = useState<number | null>(null); // กำหนดให้รองรับทั้ง number และ null
+  const [selectedHotel, setSelectedHotel] = useState<number | null>(null);
+  const router = useRouter(); // ✅
 
   const hotels = [
     {
       name: "安娜 HOTEL",
       location: "Yaowarat, Bangkok",
-      price: 1150.00,
+      price: 1150.0,
       image: "/img/cover.jpg",
-      description: "安娜 HOTEL — A peaceful stay in the heart of Yaowarat. Discover the soul of Chinatown, one street and flavor at a time.",
+      description:
+        "安娜 HOTEL — A peaceful stay in the heart of Yaowarat. Discover the soul of Chinatown, one street and flavor at a time.",
     },
     {
       name: "Merry House",
       location: "Mae-Rim, Chiangmai",
-      price: 890.00,
+      price: 890.0,
       image: "/img/cover2.jpg",
-      description: "Merry House, Chiangmai — Where slow mornings and soft sunsets live. Feel at home, far from the noise.",
+      description:
+        "Merry House, Chiangmai — Where slow mornings and soft sunsets live. Feel at home, far from the noise.",
     },
     {
       name: "Cozy Days Hotel",
       location: "Patumwan, Bangkok",
-      price: 990.00,
+      price: 990.0,
       image: "/img/cover3.jpg",
-      description: "Cozy Days Hotel — Slow mornings in fast-moving Bangkok.Designed for rest, right where life happens.",
+      description:
+        "Cozy Days Hotel — Slow mornings in fast-moving Bangkok. Designed for rest, right where life happens.",
     },
     {
       name: "Civic Haus",
       location: "Hat-Yai, Songkla",
-      price: 1010.00 ,
+      price: 1010.0,
       image: "/img/cover4.jpg",
-      description: "Civic Haus — Stay sharp. Stay central. In the heart of Hat Yai, where the city meets style.",
+      description:
+        "Civic Haus — Stay sharp. Stay central. In the heart of Hat Yai, where the city meets style.",
     },
     {
       name: "Cozy House",
       location: "Nonthaburi",
-      price: 796.00  ,
+      price: 796.0,
       image: "/img/cover5.jpg",
-      description: "Cozy House — Your home in Nonthaburi.Peaceful, personal, and perfectly local.",
+      description:
+        "Cozy House — Your home in Nonthaburi. Peaceful, personal, and perfectly local.",
     },
     {
       name: "Seabreeze Inn",
       location: "Phuket",
-      price: 986.00  ,
+      price: 986.0,
       image: "/img/cover6.jpg",
-      description: "Seabreeze Inn, Phuket — Where every breeze feels like a welcome. Walk to the beach. Stay for the peace.",
+      description:
+        "Seabreeze Inn, Phuket — Where every breeze feels like a welcome. Walk to the beach. Stay for the peace.",
     },
-    
   ];
 
   return (
@@ -61,8 +68,10 @@ export default function Hotels() {
           </div>
 
           <div className="ml-8 text-lg text-gray-800">
-            <p>Click "Select" to view <br />
-              hotel details and make a reservation.</p>
+            <p>
+              Click "Select" to view <br />
+              hotel details and make a reservation.
+            </p>
           </div>
         </div>
 
@@ -86,19 +95,27 @@ export default function Hotels() {
                   {hotel.location}
                 </p>
                 <div className="flex justify-between items-center mt-2">
-                  <p className="text-lg font-semibold">฿{hotel.price} per night</p>
+                  <p className="text-lg font-semibold">
+                    ฿{hotel.price} per night
+                  </p>
                   <button
                     className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:shadow-md transition-all duration-300"
-                    onClick={() =>
-                      setSelectedHotel(selectedHotel === index ? null : index)
-                    }
+                    onClick={() => {
+                      if (selectedHotel === index) {
+                        router.push("/booking"); // ✅ Redirect to /booking
+                      } else {
+                        setSelectedHotel(index); // ✅ Select hotel
+                      }
+                    }}
                   >
                     {selectedHotel === index ? "Booking" : "Select"}
                   </button>
                 </div>
                 {selectedHotel === index && (
                   <div className="mt-4">
-                    <p className="text-sm text-gray-600">{hotel.description}</p>
+                    <p className="text-sm text-gray-600">
+                      {hotel.description}
+                    </p>
                   </div>
                 )}
               </div>
