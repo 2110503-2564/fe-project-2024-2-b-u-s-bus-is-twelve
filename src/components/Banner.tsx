@@ -41,13 +41,12 @@ export default function Banner () {
             </p>
             </div>
 
-
             <div className="absolute right-10 top-1/2 transform -translate-y-1/2 flex flex-col space-y-2">
                 {covers.map((_, i) => (
                     <div 
                         key={i}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                            i === index ? 'bg-white' : 'bg-gray-500 opacity-50'
+                        className={`w-3 h-3 rounded-full transition-all duration-500 ease-in-out ${
+                            i === index ? 'bg-white scale-125' : 'bg-gray-500 opacity-50'
                         }`}
                     />
                 ))}
