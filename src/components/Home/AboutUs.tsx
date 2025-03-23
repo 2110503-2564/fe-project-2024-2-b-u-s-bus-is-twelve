@@ -7,7 +7,7 @@ export default function AboutUs(){
                     perfect stay in just a few clicks! <br />
                 </div>
 
-                <div className="mt-4 py-2 text-xl  text-gray-800">
+                <div className="mt-4 py-2 text-xl text-gray-800">
                     Whether you’re looking for a luxurious getaway, a cozy retreat, or a budget-friendly option, we’ve got you covered. 
                     Our platform ensures the best deals and a seamless booking experience, so you can focus on enjoying your trip.
                     <br />
@@ -16,9 +16,9 @@ export default function AboutUs(){
                 </div>
 
                 <div className="mt-6">
-                    <button className="bg-white border border-black font-semibold py-2 px-4 rounded hover:bg-black hover:text-white hover:border-transparent text-xl">
-                        Booking Now!
-                    </button>
+                <button className="bg-white border border-black font-semibold py-2 px-4 rounded hover:bg-black hover:text-white hover:shadow-lg hover:border-transparent text-xl transform transition-all duration-200 hover:scale-105">
+                    Booking Now!
+                </button>
                 </div>
 
             </div>

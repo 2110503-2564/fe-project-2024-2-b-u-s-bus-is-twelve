@@ -43,24 +43,41 @@ export default function TopMenu() {
 
                 <div className="absolute right-10 h-full flex items-center gap-x-1">
 
-                <TopMenuItem title='Home' pageRef='/' className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt]"/>
+                <TopMenuItem
+                    title='Home'
+                    pageRef='/'
+                    className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt] transform transition-all duration-200 hover:scale-105 "
+                />
 
-                <TopMenuItem title='Explore' pageRef='/viewhotels' className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt]"/>
+                <TopMenuItem
+                    title='Explore'
+                    pageRef='/viewhotels'
+                    className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt] transform transition-all duration-200 hover:scale-105 "
+                />
 
-                <TopMenuItem title='Booking' pageRef='/booking' className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt]"/>
+                <TopMenuItem
+                    title='Booking'
+                    pageRef='/booking'
+                    className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt] transform transition-all duration-200 hover:scale-105 "
+                />
 
-                {/* <TopMenuItem title='My Booking' pageRef='/mybooking' />  */}
-                
-                    {session ? (
-                        <Link href='/api/auth/signout' className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt]">
-                            Sign-Out of {session.user?.name}
-                        </Link>
-                    ) : (
-                        <Link href='/api/auth/signin' className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt]">
-                            Sign-In
-                        </Link>
-                    )}
-                    
+                    {/* <TopMenuItem title='My Booking' pageRef='/mybooking' /> */}
+
+                {session ? (
+                <Link
+                    href='/api/auth/signout'
+                    className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt] transform transition-all duration-200 hover:scale-105 "
+                >
+                    Sign-Out of {session.user?.name}
+                </Link>
+                ) : (
+                <Link
+                    href='/api/auth/signin'
+                    className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt] transform transition-all duration-200 hover:scale-105 "
+                >
+                    Sign-In
+                </Link>
+                )}
                 </div>
 
             </div>

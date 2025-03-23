@@ -7,7 +7,6 @@ export default function ViewHotels() {
     return (
         <main>
             <Banner2 />
-            <br />
             <Hotels />
             <br />
             <Gallery />
