@@ -19,7 +19,7 @@ export default function Hotels() {
     {
       name: "Merry House",
       location: "Mae-Rim, Chiangmai",
-      price: 890.0,
+      price: 880.0,
       image: "/img/cover2.jpg",
       description:
         "Merry House, Chiangmai — Where slow mornings and soft sunsets live. Feel at home, far from the noise.",
