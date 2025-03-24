@@ -1,9 +1,9 @@
-export default async function getVenues() {
+export default async function getHotels() {
     await new Promise( (resolve)=>setTimeout(resolve, 300) )
 
-    const response = await fetch("https://a08-venue-explorer-backend-2.vercel.app/api/v1/venues")
+    const response = await fetch("http://localhost:5000/api/v1/hotels", { next: {tags:['hotels']} })
     if(!response.ok) {
-        throw new Error("Failed to fetch venues")
+        throw new Error("Failed to fetch hotels")
     }
 
     return await response.json()
