@@ -16,6 +16,8 @@ export default function Booking() {
     const [venue, setVenue] = useState("");
     const [bookDate, setBookDate] = useState<Dayjs | null>(null);
 
+    const [count,setCount] = useState(0);
+
     const handleBooking = () => {
         if (!nameLastname || !tel || !venue || !bookDate) {
             alert("Please fill in all fields!");
@@ -29,6 +31,8 @@ export default function Booking() {
             venue,
             bookDate: bookDate.format("YYYY-MM-DD"),
         }));
+
+        setCount(count + 1);
 
         alert("Booking successful!");
 
