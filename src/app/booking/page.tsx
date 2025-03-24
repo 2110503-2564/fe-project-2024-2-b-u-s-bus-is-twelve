@@ -6,6 +6,9 @@ import { MenuItem, Select, TextField, Button } from "@mui/material";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs, { Dayjs } from "dayjs";
+import Banner2 from "@/components/ViewHotels/Banner2";
+import Rating from "@/components/Booking/Rating";
+import Blog from "@/components/Booking/Blog";
 
 export default function Booking() {
   const dispatch = useDispatch();
@@ -42,124 +45,144 @@ export default function Booking() {
   };
 
   return (
-    <main className="w-full min-h-screen flex flex-col items-center space-y-6 py-10 bg-gray-900 text-white">
-      <div className="text-2xl font-semibold">Hotel Booking</div>
+    <main className="w-full min-h-screen flex flex-col items-center space-y-6 text-white">
 
-      <div className="flex flex-col bg-slate-100 rounded-lg space-y-5 w-[90%] max-w-md px-6 py-6">
-      <TextField
-        name="Name-Lastname"
-        label="Name-Lastname"
-        variant="standard"
-        value={nameLastname}
-        onChange={(e) => setNameLastname(e.target.value)}
-        InputProps={{ style: { color: "#000" } }} // dark text
-        InputLabelProps={{ style: { color: "#555" } }} // darker label
-        sx={{
-            '& .MuiInput-underline:before': { borderBottomColor: '#aaa' },
-            '& .MuiInput-underline:hover:before': { borderBottomColor: '#888' },
-            '& .MuiInput-underline:after': { borderBottomColor: '#000' },
-        }}
-        />
+      <Banner2/>
+      
+      <div className="text-4xl font-semibold text-black font-playfair">Hotel Booking</div>
 
-        <TextField
-          name="Contact-Number"
-          label="Contact-Number"
-          variant="standard"
-          value={tel}
-          onChange={(e) => setTel(e.target.value)}
-          InputProps={{ style: { color: "#000" } }}
-          InputLabelProps={{ style: { color: "#555" } }}
-          sx={{
+<div className="flex flex-col bg-gray-100 rounded-xl shadow-lg space-y-5 w-[100%] max-w-lg px-8 py-8">
+  <TextField
+    name="Name-Lastname"
+    label="Name-Lastname"
+    variant="standard"
+    value={nameLastname}
+    onChange={(e) => setNameLastname(e.target.value)}
+    InputProps={{ style: { color: "#000", fontSize: '1.2rem' } }} // เพิ่มขนาดฟอนต์
+    InputLabelProps={{ style: { color: "#555", fontSize: '1.2rem' } }} // เพิ่มขนาดฟอนต์
+    sx={{
+        '& .MuiInput-underline:before': { borderBottomColor: '#aaa' },
+        '& .MuiInput-underline:hover:before': { borderBottomColor: '#888' },
+        '& .MuiInput-underline:after': { borderBottomColor: '#000' },
+    }}
+  />
+
+  <TextField
+    name="Contact-Number"
+    label="Contact-Number"
+    variant="standard"
+    value={tel}
+    onChange={(e) => setTel(e.target.value)}
+    InputProps={{ style: { color: "#000", fontSize: '1.2rem' } }} // เพิ่มขนาดฟอนต์
+    InputLabelProps={{ style: { color: "#555", fontSize: '1.2rem' } }} // เพิ่มขนาดฟอนต์
+    sx={{
+      '& .MuiInput-underline:before': { borderBottomColor: '#666' },
+      '& .MuiInput-underline:hover:before': { borderBottomColor: '#aaa' },
+      '& .MuiInput-underline:after': { borderBottomColor: '#fff' },
+    }}
+  />
+
+  <TextField
+    name="Night"
+    label="Night"
+    type="number"
+    variant="standard"
+    value={night}
+    onChange={(e) => setNight(Number(e.target.value))}
+    InputProps={{ style: { color: "#000", fontSize: '1.2rem' } }} // เพิ่มขนาดฟอนต์
+    InputLabelProps={{ style: { color: "#555", fontSize: '1.2rem' } }} // เพิ่มขนาดฟอนต์
+    sx={{
+      '& .MuiInput-underline:before': { borderBottomColor: '#666' },
+      '& .MuiInput-underline:hover:before': { borderBottomColor: '#aaa' },
+      '& .MuiInput-underline:after': { borderBottomColor: '#fff' },
+    }}
+  />
+
+  <Select
+    variant="standard"
+    name="Hotel"
+    value={venue}
+    onChange={(e) => setVenue(e.target.value)}
+    displayEmpty
+    fullWidth
+    sx={{
+        color: "#000", // text color inside select
+        fontSize: '1.2rem', // เพิ่มขนาดฟอนต์
+        borderBottom: "1px solid #aaa",
+        '&:before': {
+        borderBottom: "1px solid #aaa",
+        },
+        '&:hover:not(.Mui-disabled):before': {
+        borderBottom: "1px solid #888",
+        },
+        '&:after': {
+        borderBottom: "1px solid #000",
+        },
+        '.MuiSelect-icon': { color: '#000' }, // dropdown icon color
+    }}
+    inputProps={{
+        style: { color: '#000', fontSize: '1.2rem' }, // input text color และ ขนาดฟอนต์
+    }}
+    renderValue={
+        venue !== "" ? undefined : () => <span style={{ color: "#888", fontSize: '1.2rem' }}>Select Hotel</span>
+    }
+  >
+    <MenuItem value="" disabled>Select Hotel</MenuItem>
+    <MenuItem value="AnnaHotel">安娜 HOTEL</MenuItem>
+    <MenuItem value="MerryHouse">Merry House</MenuItem>
+    <MenuItem value="Cozy Days Hotel">Cozy Days Hotel</MenuItem>
+    <MenuItem value="Civic Haus">Civic Haus</MenuItem>
+    <MenuItem value="CozyHouse">Cozy House</MenuItem>
+    <MenuItem value="SeabreezeInn">Seabreeze Inn</MenuItem>
+  </Select>
+
+  <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <DatePicker
+      label="Booking Date"
+      value={bookDate}
+      onChange={(date) => setBookDate(date)}
+      slotProps={{
+        textField: {
+          variant: "standard",
+          InputLabelProps: { style: { color: "#000", fontSize: '1.2rem' } }, // เพิ่มขนาดฟอนต์
+          InputProps: { style: { color: "#555", fontSize: '1.2rem' } }, // เพิ่มขนาดฟอนต์
+          sx: {
             '& .MuiInput-underline:before': { borderBottomColor: '#666' },
             '& .MuiInput-underline:hover:before': { borderBottomColor: '#aaa' },
             '& .MuiInput-underline:after': { borderBottomColor: '#fff' },
-          }}
-        />
+          },
+        },
+      }}
+    />
+  </LocalizationProvider>
+</div>
 
-        <TextField
-          name="Night"
-          label="Night"
-          type="number"
-          variant="standard"
-          value={night}
-          onChange={(e) => setNight(Number(e.target.value))}
-          InputProps={{ style: { color: "#000" } }}
-          InputLabelProps={{ style: { color: "#555" } }}
-          sx={{
-            '& .MuiInput-underline:before': { borderBottomColor: '#666' },
-            '& .MuiInput-underline:hover:before': { borderBottomColor: '#aaa' },
-            '& .MuiInput-underline:after': { borderBottomColor: '#fff' },
-          }}
-        />
-
-        <Select
-        variant="standard"
-        name="Hotel"
-        value={venue}
-        onChange={(e) => setVenue(e.target.value)}
-        displayEmpty
-        fullWidth
-        sx={{
-            color: "#000", // text color inside select
-            borderBottom: "1px solid #aaa",
-            '&:before': {
-            borderBottom: "1px solid #aaa",
-            },
-            '&:hover:not(.Mui-disabled):before': {
-            borderBottom: "1px solid #888",
-            },
-            '&:after': {
-            borderBottom: "1px solid #000",
-            },
-            '.MuiSelect-icon': { color: '#000' }, // dropdown icon color
-        }}
-        inputProps={{
-            style: { color: '#000' }, // input text color
-        }}
-        renderValue={
-            venue !== "" ? undefined : () => <span style={{ color: "#888" }}>Select Hotel</span>
-        }
-        >
-        <MenuItem value="" disabled>Select Hotel</MenuItem>
-        <MenuItem value="AnnaHotel">安娜 HOTEL</MenuItem>
-        <MenuItem value="MerryHouse">Merry House</MenuItem>
-        <MenuItem value="Cozy Days Hotel">Cozy Days Hotel</MenuItem>
-        <MenuItem value="Civic Haus">Civic Haus</MenuItem>
-        <MenuItem value="CozyHouse">Cozy House</MenuItem>
-        <MenuItem value="SeabreezeInn">Seabreeze Inn</MenuItem>
-        </Select>
+<Button
+  variant="contained"
+  sx={{
+    mt: 2,
+    bgcolor: "black",
+    color: "white",
+    fontSize: '1.2rem', // เพิ่มขนาดฟอนต์
+    padding: '12px 24px', // ปรับขนาดปุ่ม
+    "&:hover": {
+      bgcolor: "#333", 
+    },
+  }}
+  name="Book Hotel"
+  onClick={handleBooking}
+>
+  Book Hotel
+</Button>
 
 
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DatePicker
-            label="Booking Date"
-            value={bookDate}
-            onChange={(date) => setBookDate(date)}
-            slotProps={{
-              textField: {
-                variant: "standard",
-                InputLabelProps: { style: { color: "#000" } },
-                InputProps: { style: { color: "#555" } },
-                sx: {
-                  '& .MuiInput-underline:before': { borderBottomColor: '#666' },
-                  '& .MuiInput-underline:hover:before': { borderBottomColor: '#aaa' },
-                  '& .MuiInput-underline:after': { borderBottomColor: '#fff' },
-                },
-              },
-            }}
-          />
-        </LocalizationProvider>
-      </div>
+      <br/>
 
-      <Button
-        variant="contained"
-        color="primary"
-        name="Book Hotel"
-        onClick={handleBooking}
-        sx={{ mt: 2 }}
-      >
-        Book Hotel
-      </Button>
+        <Rating />
+
+      <br/>
+        <Blog />
+
     </main>
   );
 }
