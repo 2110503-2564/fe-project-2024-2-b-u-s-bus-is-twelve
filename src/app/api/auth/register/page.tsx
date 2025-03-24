@@ -4,41 +4,41 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+
+  const [name, setName] = useState("");
+  const [telephone_num, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
 
   const router = useRouter();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+//   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+//     setFormData({ ...formData, [e.target.name]: e.target.value });
+//   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
+    if (password !== confirmPassword) {
       setErrorMsg("Passwords do not match.");
       return;
     }
 
     try {
-      const response = await fetch("http://localhost:3000/api/auth/register", {
+      const response = await fetch("http://localhost:5000/api/v1/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: formData.name,
-          phoneNumber: formData.phone,
-          email: formData.email,
-          password: formData.password,
+          name,
+          telephone_num,
+          email,
+          password,
           role: "user",
         }),
       });
@@ -70,8 +70,8 @@ export default function RegisterPage() {
         <input
           type="text"
           name="name"
-          value={formData.name}
-          onChange={handleChange}
+          value={name}
+          onChange={(e)=>setName(e.target.value)}
           required
           className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
@@ -80,8 +80,8 @@ export default function RegisterPage() {
         <input
           type="tel"
           name="phone"
-          value={formData.phone}
-          onChange={handleChange}
+          value={telephone_num}
+          onChange={(e)=>setPhoneNumber(e.target.value)}
           pattern="\d{10}"
           required
           className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -91,8 +91,8 @@ export default function RegisterPage() {
         <input
           type="email"
           name="email"
-          value={formData.email}
-          onChange={handleChange}
+          value={email}
+          onChange={(e)=>setEmail(e.target.value)}
           required
           className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
@@ -101,8 +101,8 @@ export default function RegisterPage() {
         <input
           type="password"
           name="password"
-          value={formData.password}
-          onChange={handleChange}
+          value={password}
+          onChange={(e)=>setPassword(e.target.value)}
           minLength={6}
           required
           className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -112,8 +112,8 @@ export default function RegisterPage() {
         <input
           type="password"
           name="confirmPassword"
-          value={formData.confirmPassword}
-          onChange={handleChange}
+          value={confirmPassword}
+          onChange={(e)=>setConfirmPassword(e.target.value)}
           minLength={6}
           required
           className="w-full p-2 mb-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
