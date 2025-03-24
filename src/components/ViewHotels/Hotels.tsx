@@ -11,7 +11,7 @@ export default function Hotels() {
     {
       name: "安娜 HOTEL",
       location: "Yaowarat, Bangkok",
-      price: 1150.0,
+      price: 1160.0,
       image: "/img/cover.jpg",
       description:
         "安娜 HOTEL — A peaceful stay in the heart of Yaowarat. Discover the soul of Chinatown, one street and flavor at a time.",
