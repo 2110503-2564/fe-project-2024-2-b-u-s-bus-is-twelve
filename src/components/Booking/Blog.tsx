@@ -17,7 +17,7 @@ export default function Blog() {
         <div>
           <div className="relative mb-4">
             <Image
-              src="/img/cover.jpg"
+              src="/img/travel.jpg"
               alt="Travel Destination"
               width={500}
               height={400}
@@ -33,7 +33,7 @@ export default function Blog() {
         <div className="space-y-6 px-10">
           <div className="relative">
             <Image
-              src="/img/cover3.jpg"
+              src="/img/Beach.jpg"
               alt="Beach"
               width={400}
               height={300}
@@ -44,7 +44,7 @@ export default function Blog() {
 
           <div className="relative">
             <Image
-              src="/img/cover6.jpg"
+              src="/img/Mountain.jpg"
               alt="Mountain Adventure"
               width={400}
               height={300}

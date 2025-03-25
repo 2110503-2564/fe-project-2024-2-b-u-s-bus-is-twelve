@@ -1,1 +1,1 @@
-Vercel : https://bus-frontend-git-main-supatips-projects.vercel.app/
+Vercel : https://bus-frontend2-git-main-supatips-projects.vercel.app/
