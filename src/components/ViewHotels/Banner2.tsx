@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "@/components/Home/banner.module.css"
 import { useSession } from 'next-auth/react';
 
-export default function Banner2 () {
+export default function Banner3 () {
 
     return (
         <div className={styles.banner}>

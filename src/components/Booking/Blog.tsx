@@ -18,7 +18,7 @@ export default function Blog() {
         <div>
             <div className="relative aspect-[2/3] w-full mb-4 overflow-hidden rounded-lg">
               <Image
-                src="/img/travel.jpg"
+                src="/img/cover6.jpg"
                 alt="Travel Destination"
                 fill
                 className="object-cover hover:scale-105 transition-all duration-500"
