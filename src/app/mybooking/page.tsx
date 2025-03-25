@@ -98,7 +98,7 @@ export default function MyBooking() {
   
       console.log("Booking updated successfully");
     } catch (error) {
-      console.error("Error updating booking:", error);
+      console.error("Error updating booking:", error); 
     }
   };
   
