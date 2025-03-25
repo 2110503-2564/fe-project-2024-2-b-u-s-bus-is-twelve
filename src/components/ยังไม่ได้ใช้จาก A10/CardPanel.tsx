@@ -34,12 +34,12 @@ export default function CardPanel() {
      */
 
     const mockVenueRepo = [
-        {hid: "001", name: "安娜 HOTEL", image: "/img/cover.jpg"},
-        {hid: "002", name: "Merry House", image: "/img/cover2.jpg"},
-        {hid: "003", name: "Cozy Days Hotel", image: "/img/cover3.jpg"},
-        {hid: "004", name: "Civic Haus", image: "/img/cover4.jpg"},
-        {hid: "005", name: "Cozy House", image: "/img/cover5.jpg"},
-        {hid: "006", name: "Seabreeze Inn", image: "/img/cover6.jpg"}
+        {hid: "001", name: "Pamookkoo Resort", image: "/img/cover.jpg"},
+        {hid: "002", name: "Sametnangshe Boutique", image: "/img/cover2.jpg"},
+        {hid: "003", name: "Rarin Villas", image: "/img/cover3.jpg"},
+        {hid: "004", name: "Baan Whaya", image: "/img/cover4.jpg"},
+        {hid: "005", name: "Capella Bangkok", image: "/img/cover5.jpg"},
+        {hid: "006", name: "Casa Damnoen Residence", image: "/img/cover6.jpg"}
     ]
 
     return(

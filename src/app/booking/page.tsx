@@ -148,12 +148,12 @@ export default function Booking() {
           }
         >
           <MenuItem value="" disabled>Select Hotel</MenuItem>
-          <MenuItem value="安娜 HOTEL">安娜 HOTEL</MenuItem>
-          <MenuItem value="Merry House">Merry House</MenuItem>
-          <MenuItem value="Cozy Days Hotel">Cozy Days Hotel</MenuItem>
-          <MenuItem value="Civic Haus">Civic Haus</MenuItem>
-          <MenuItem value="Cozy House">Cozy House</MenuItem>
-          <MenuItem value="Seabreeze Inn">Seabreeze Inn</MenuItem>
+          <MenuItem value="Pamookkoo Resort">Pamookkoo Resort</MenuItem>
+          <MenuItem value="Sametnangshe Boutique">Sametnangshe Boutique</MenuItem>
+          <MenuItem value="Rarin Villas">Rarin Villas</MenuItem>
+          <MenuItem value="Baan Whaya">Baan Whaya</MenuItem>
+          <MenuItem value="Capella Bangkok">Capella Bangkok</MenuItem>
+          <MenuItem value="Casa Damnoen Residence">Casa Damnoen Residence</MenuItem>
         </Select>
 
         <LocalizationProvider dateAdapter={AdapterDayjs}>

@@ -78,7 +78,7 @@ export default function TopMenu() {
                     href='/api/auth/signout'
                     className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt] transform transition-all duration-200 hover:scale-105 "
                 >
-                    Sign-Out {session.user?.name}
+                    Sign-out of {session.user?.name}
                 </Link>
                 ) : (
                 <Link

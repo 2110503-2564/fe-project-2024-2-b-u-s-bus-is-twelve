@@ -79,10 +79,20 @@ export default function RecommendHotel() {
                                     {/* ข้อความทับบนรูปภาพ */}
                                     <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-transparent to-transparent p-4">
                                         <p className="text-white text-xl font-semibold">{hotel.name}</p>
-                                        <p className="text-white text-lg flex items-center">
+                                        <div className="text-sm text-white flex items-center mt-1">
                                             <MapPin className="w-4 h-4 mr-1" />
-                                            {hotel.location}
-                                        </p>
+                                            <a
+                                                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                                                hotel.location
+                                                )}`}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-white underline hover:underline"
+                                            >
+                                                {hotel.location}
+                                            </a>
+                                            </div>
+
                                     </div>
                                 </div>
                             </div>

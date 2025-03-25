@@ -15,12 +15,12 @@ export default function DateReserve() {
             <TextField  name="Contact-Number" id="Contact-Number" label="Contact-Number" variant="standard" />
 
             <Select variant="standard" name="venue" id="venue" className="h-[2em] w-[100%]">
-                <MenuItem value="Bloom">安娜 HOTEL</MenuItem>
-                <MenuItem value="Spark">Merry House</MenuItem>
-                <MenuItem value="GrandTable">Cozy Days Hotel</MenuItem>
-                <MenuItem value="Bloom">Civic Haus</MenuItem>
-                <MenuItem value="Spark">Cozy House</MenuItem>
-                <MenuItem value="GrandTable">Seabreeze Inn</MenuItem>
+                <MenuItem value="Pamookkoo Resort">Pamookkoo Resort</MenuItem>
+                <MenuItem value="Sametnangshe Boutique">Sametnangshe Boutique</MenuItem>
+                <MenuItem value="Rarin Villas">Rarin Villas</MenuItem>
+                <MenuItem value="Baan Whaya">Baan Whaya</MenuItem>
+                <MenuItem value="Capella Bangkok">Capella Bangkok</MenuItem>
+                <MenuItem value="Casa Damnoen Residence">Casa Damnoen Residence</MenuItem>
             </Select>
 
             <LocalizationProvider dateAdapter={AdapterDayjs}>
