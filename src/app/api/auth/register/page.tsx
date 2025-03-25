@@ -139,7 +139,7 @@ export default function RegisterPage() {
 
         <p className="text-center text-sm mt-4">
           Already have an account?{" "}
-          <a href="http://localhost000/api/auth/signin" className="text-blue-600 hover:underline">
+          <a href="http://localhost:3000/api/auth/signin" className="text-blue-600 hover:underline">
             Sign in
           </a>
         </p>

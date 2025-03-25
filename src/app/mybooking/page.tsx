@@ -5,12 +5,30 @@ import { CircularProgress, Button, TextField, MenuItem, Select, InputLabel, Form
 import dayjs from 'dayjs';
 import Banner3 from '@/components/MyBooking/Banner3';
 
+type Hotel = {
+  _id: string;
+  name: string;
+};
+
+type Booking = {
+  _id: string;
+  nameLastname: string;
+  tel: string;
+  night: number;
+  bookingDate: string;
+  hotel: string | {
+    _id: string;
+    name: string;
+  };
+};
+
 export default function MyBooking() {
   const { data: session } = useSession();
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState<Booking[]>([]);
+  
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const [hotels, setHotels] = useState([]);
+  const [hotels, setHotels] = useState<Hotel[]>([]);
 
   useEffect(() => {
     const fetchBookings = async () => {
@@ -51,62 +69,62 @@ export default function MyBooking() {
     fetchHotels();
   }, [session]);
 
-  const handleUpdate = async (bookingId, updatedBooking) => {
+  const handleUpdate = async (bookingId: string, updatedBooking: { 
+    nameLastname: string; 
+    tel: string; 
+    night: number; 
+    bookingDate: string; 
+    hotel: string | { _id: string };
+  }) => {
     try {
       const res = await fetch(`http://localhost:5000/api/v1/bookings/${bookingId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${session.user.token}`,
+          Authorization: `Bearer ${session?.user?.token}`, // ป้องกัน error กรณี session เป็น undefined
         },
         body: JSON.stringify({
           nameLastname: updatedBooking.nameLastname,
           tel: updatedBooking.tel,
           night: updatedBooking.night,
           bookingDate: updatedBooking.bookingDate,
-          hotel: updatedBooking.hotel._id || updatedBooking.hotel
+          hotel: typeof updatedBooking.hotel === "string" ? updatedBooking.hotel : updatedBooking.hotel._id,
         }),
       });
-
-      const data = await res.json();
-
+  
       if (!res.ok) {
-        alert(data.message || 'Failed to update booking.');
-      } else {
-        setBookings(bookings.map(b => (b._id === bookingId ? data.data : b)));
-        alert('Booking updated successfully.');
+        throw new Error("Failed to update booking");
       }
-    } catch (err) {
-      alert('Error updating booking.');
+  
+      console.log("Booking updated successfully");
+    } catch (error) {
+      console.error("Error updating booking:", error);
     }
   };
+  
 
-  const handleDelete = async (bookingId) => {
-  const confirmed = confirm('Are you sure you want to delete this booking?');
-  if (!confirmed) return;
-
-  try {
-    const res = await fetch(`http://localhost:5000/api/v1/bookings/${bookingId}`, {
-      method: 'DELETE',
-      headers: {
-        Authorization: `Bearer ${session.user.token}`,
-      },
-    });
-
-    const data = await res.json();
-    console.log('DELETE response:', data);
-
-    if (!res.ok) {
-      alert(data.message || 'Failed to delete booking.');
-    } else {
-      setBookings(bookings.filter(b => b._id !== bookingId));
-      alert('Booking deleted successfully.');
+  const handleDelete = async (bookingId: string) => {
+    const confirmed = confirm('Are you sure you want to delete this booking?');
+    if (!confirmed) return;
+  
+    try {
+      const res = await fetch(`http://localhost:5000/api/v1/bookings/${bookingId}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${session?.user?.token}`, // ป้องกัน error ถ้า session ยังไม่มีค่า
+        },
+      });
+  
+      if (!res.ok) {
+        throw new Error('Failed to delete booking');
+      }
+  
+      console.log('Booking deleted successfully');
+    } catch (error) {
+      console.error('Error deleting booking:', error);
     }
-  } catch (err) {
-    alert('Error deleting booking.');
-    console.error(err);
-  }
-};
+  };
+  
 
 
   if (loading) return <div className="text-center"><CircularProgress /></div>;
@@ -128,7 +146,7 @@ export default function MyBooking() {
             <InputLabel id={`hotel-select-label-${index}`}>Hotel</InputLabel>
             <Select
               labelId={`hotel-select-label-${index}`}
-              value={booking.hotel._id || booking.hotel}
+              value={typeof booking.hotel === 'object' ? booking.hotel._id : booking.hotel}
               label="Hotel"
               onChange={(e) => {
                 const updatedHotel = e.target.value;
@@ -174,7 +192,7 @@ export default function MyBooking() {
             fullWidth
             margin="normal"
             onChange={(e) => {
-              const value = e.target.value;
+              const value = Number(e.target.value);
               setBookings(prev =>
                 prev.map((b, i) => i === index ? { ...b, night: value } : b)
               );
