@@ -40,7 +40,7 @@ export default function Booking() {
     console.log("bookingData", bookingData);
 
     try {
-      const response = await fetch("http://localhost:5000/api/v1/bookings", {
+      const response = await fetch("http://localhost:5003/api/v1/bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

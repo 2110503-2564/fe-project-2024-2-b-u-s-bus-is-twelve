@@ -26,3 +26,9 @@ export interface BookingItem {
   hotel: string;
   bookDate: string;
 }
+
+export interface BookingResponse {
+  success: boolean;
+  count: number;
+  data: BookingItem[];
+}
