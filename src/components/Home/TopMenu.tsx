@@ -61,11 +61,15 @@ export default function TopMenu() {
                     className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt] transform transition-all duration-200 hover:scale-105 "
                 />
 
-                <TopMenuItem
-                    title='MyBooking'
-                    pageRef='/mybooking'
-                    className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt] transform transition-all duration-200 hover:scale-105 "
-                />
+                {session ? (
+                    <TopMenuItem
+                    title="MyBooking"
+                    pageRef="/mybooking"
+                    className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt] transform transition-all duration-200 hover:scale-105"
+                    />
+                ) : ("")
+                }
+
 
                     {/* <TopMenuItem title='My Booking' pageRef='/mybooking' /> */}
 
