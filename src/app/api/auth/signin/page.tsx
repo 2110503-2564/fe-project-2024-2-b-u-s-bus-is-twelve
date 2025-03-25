@@ -69,7 +69,7 @@ export default function LoginPage() {
         <p className="text-center text-sm mt-4">
           Don't have an account yet?{" "}
           <a
-            href="/api/auth/register"
+            href={`{process.env.BACKEND_URL}/api/auth/signin`}
             className="text-blue-600 hover:underline"
           >
             Register
