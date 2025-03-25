@@ -4,16 +4,16 @@ import Image from 'next/image';
 import { MapPin } from 'lucide-react';
 
 const hotels = [
-    { id: 1, image: "/img/cover.jpg", name: "安娜 HOTEL", location: "Bangkok, Thailand" },
-    { id: 2, image: "/img/cover2.jpg", name: "Merry House", location: "Chiang Mai, Thailand" },
-    { id: 3, image: "/img/cover3.jpg", name: "Cozy Days Hotel", location: "Bangkok, Thailand" },
-    { id: 4, image: "/img/cover4.jpg", name: "Civic Haus", location: "Songkla, Thailand" },
-    { id: 5, image: "/img/cover5.jpg", name: "Cozy House", location: "Nonthaburi, Thailand" },
-    { id: 6, image: "/img/cover6.jpg", name: "Seabreeze Inn", location: "Phuket, Thailand" },
-    { id: 7, image: "/img/cover7.jpg", name: "Seaside Escape", location: "Phang-Nga, Thailand" },
-    { id: 8, image: "/img/cover3.jpg", name: "Urban Stay", location: "Hua Hin, Thailand" },
-    { id: 9, image: "/img/cover4.jpg", name: "Lakeside Retreat", location: "Chiang Rai, Thailand" },
-    { id: 10, image: "/img/cover5.jpg", name: "Forest Haven", location: "Mae Hong Son, Thailand" },
+    { id: 1, image: "/img/cover.jpg", name: "Pamookkoo Resort", location: "Pamookkoo Resort, Phuket" },
+    { id: 2, image: "/img/cover2.jpg", name: "Sametnangshe Boutique", location: "Sametnangshe Boutique, Phang-Nga" },
+    { id: 3, image: "/img/cover3.jpg", name: "Rarin Villas", location: "Rarin Villas, Chiangmai" },
+    { id: 4, image: "/img/cover4.jpg", name: "Baan Whaya", location: "บ้านหว่าญ่า ม่อนแจ่ม" },
+    { id: 5, image: "/img/cover5.jpg", name: "Capella Bangkok", location: "Capella Bangkok" },
+    { id: 6, image: "/img/cover6.jpg", name: "Casa Damnoen Residence", location: "Casa Damnoen Residence, Ratchaburi" },
+    { id: 7, image: "/img/cover7.jpg", name: "Sea of Love", location: "Sea of Love, Pattaya" },
+    { id: 8, image: "/img/cover8.jpg", name: "Resort De Paskani", location: "Resort De Paskani, Hua Hin" },
+    { id: 9, image: "/img/cover9.jpg", name: "ปล่อยใจ ปลายนา", location: "ปล่อยใจ ปลายนา, Mae Hong Son" },
+    { id: 10, image: "/img/cover10.jpg", name: "Cherlynn Resort", location: "Cherlynn Resort, Kanchanaburi" },
 ];
 
 export default function RecommendHotel() {
