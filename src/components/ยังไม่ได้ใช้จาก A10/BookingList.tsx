@@ -21,7 +21,7 @@ export default function BookingList() {
                     >
                         <div className="text-xl font-bold">{bookingItem.nameLastname}</div>
                         <div className="text-sm"> Contact : {bookingItem.tel}</div>
-                        <div className="text-md"> Venue : {bookingItem.venue}</div>
+                        <div className="text-md"> Venue : {bookingItem.hotel}</div>
                         <div className="text-md"> Date : {bookingItem.bookDate}</div>
 
                         <button

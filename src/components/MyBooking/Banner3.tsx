@@ -30,7 +30,7 @@ export default function Page() {
   useEffect(() => {
     const fetchBookings = async () => {
       try {
-        const res = await fetch(`http://localhost:5003/api/v1/hotels/${session?.user.id}/bookings`, {
+        const res = await fetch(`http://localhost:5000/api/v1/hotels/${session?.user._id}/bookings`, {
             headers: {
                 authorization: `Bearer ${session?.user.token}`
             }
@@ -38,7 +38,7 @@ export default function Page() {
         const data:BookingResponse = await res.json();
         console.log('Booking data:', data); // ✅ ดูว่าเป็น array หรือ object
   
-        setBookings(data.data); // ถ้า data.bookings ค่อยเปลี่ยนตรงนี้
+        // setBookings(data.data); // ถ้า data.bookings ค่อยเปลี่ยนตรงนี้
       } catch (err) {
         console.error('Error fetching bookings:', err);
       } finally {
@@ -55,7 +55,7 @@ export default function Page() {
 
       {loading ? (
         <p className="text-center text-gray-600">Loading...</p>
-      ) : bookings.count === 0 ? (
+      ) : bookings.length === 0 ? (
         <p className="text-center text-gray-600">No bookings found.</p>
       ) : (
         <div className="space-y-6 max-w-2xl mx-auto">
@@ -77,7 +77,7 @@ export default function Page() {
               </p>
               <p className="text-sm text-gray-600">
                 <span className="font-medium text-gray-700">Nights:</span>{' '}
-                {booking.night}
+                {booking.nights}
               </p>
               <p className="text-sm text-gray-600">
                 <span className="font-medium text-gray-700">Booking Date:</span>{' '}
