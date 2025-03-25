@@ -19,22 +19,18 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-  const nextAuthSession = await getServerSession(authOptions)
+  const nextAuthSession = await getServerSession(authOptions);
 
   return (
     <html lang="en">
       <body className={inter.className}>
-      <head>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-      </head>
         <ReduxProvider>
-          <NextAuthProvider session={ nextAuthSession }>
+          <NextAuthProvider session={nextAuthSession}>
             <TopMenu />
             {children}
           </NextAuthProvider>
         </ReduxProvider>
-        </body>
+      </body>
     </html>
   );
 }

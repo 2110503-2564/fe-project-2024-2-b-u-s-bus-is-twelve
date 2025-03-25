@@ -15,25 +15,26 @@ export default function Blog() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Left Side: Large Image with Description Below */}
         <div>
-          <div className="relative mb-4">
-            <Image
-              src="/img/travel.jpg"
-              alt="Travel Destination"
-              width={500}
-              height={400}
-              className="rounded-lg object-cover w-full h-full hover:scale-105 transition-all duration-500"
-            />
+        <div>
+            <div className="relative aspect-[2/3] w-full mb-4 overflow-hidden rounded-lg">
+              <Image
+                src="/img/cover.jpg"
+                alt="Travel Destination"
+                fill
+                className="object-cover hover:scale-105 transition-all duration-500"
+              />
+            </div>
+            <p className="text-center text-lg text-gray-800 ">
+              Discover the Hidden Gems of the World
+            </p>
           </div>
-          <p className="text-center text-lg text-gray-800 ">
-            Discover the Hidden Gems of the World
-          </p>
         </div>
 
         {/* Right Side: Two Images with Text Below */}
         <div className="space-y-6 px-10">
           <div className="relative">
             <Image
-              src="/img/Beach.jpg"
+              src="/img/cover7.jpg"
               alt="Beach"
               width={400}
               height={300}
@@ -44,7 +45,7 @@ export default function Blog() {
 
           <div className="relative">
             <Image
-              src="/img/Mountain.jpg"
+              src="/img/cover2.jpg"
               alt="Mountain Adventure"
               width={400}
               height={300}
