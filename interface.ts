@@ -23,6 +23,6 @@ export interface BookingItem {
   nameLastname: string;
   tel: string;
   night:number;
-  venue: string;
+  hotel: string;
   bookDate: string;
 }

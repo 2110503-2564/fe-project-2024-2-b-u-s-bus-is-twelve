@@ -13,7 +13,7 @@ export const bookSlice = createSlice({
     reducers: {
         addBooking: (state, action: PayloadAction<BookingItem>) => {
             state.bookItems = state.bookItems.filter(
-                (item) => !(item.venue === action.payload.venue && item.bookDate === action.payload.bookDate)
+                (item) => !(item.hotel === action.payload.hotel && item.bookDate === action.payload.bookDate)
             );
 
             state.bookItems.push(action.payload);
@@ -23,7 +23,7 @@ export const bookSlice = createSlice({
                 (obj) =>
                     obj.nameLastname !== action.payload.nameLastname ||
                     obj.tel !== action.payload.tel ||
-                    obj.venue !== action.payload.venue ||
+                    obj.hotel !== action.payload.hotel ||
                     obj.bookDate !== action.payload.bookDate
             );
         },

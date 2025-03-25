@@ -35,12 +35,12 @@ export default function Booking() {
       tel: tel,
       night: night,
       hotel: hotel,
-      bookingDate: bookDate.format("YYYY-MM-DD"),
+      bookDate: bookDate.format("YYYY-MM-DD"),
     };
     console.log("bookingData", bookingData);
 
     try {
-      const response = await fetch("http://localhost:3/api/v1/bookings", {
+      const response = await fetch("http://localhost:5000/api/v1/bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
