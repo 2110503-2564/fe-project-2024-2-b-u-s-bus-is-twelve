@@ -6,6 +6,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions";
 import NextAuthProvider from "@/providers/NextAuthProvider";
 import ReduxProvider from "@/redux/ReduxProvider";
+import Head from "next/head"; // ✅ เพิ่มการใช้ next/head
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,13 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
+      <Head> 
+        {/* ✅ ย้าย <link> ไปไว้ใน Head ของ Next.js */}
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" 
+          rel="stylesheet"
+        />
+      </Head>
       <body className={inter.className}>
         <ReduxProvider>
           <NextAuthProvider session={nextAuthSession}>

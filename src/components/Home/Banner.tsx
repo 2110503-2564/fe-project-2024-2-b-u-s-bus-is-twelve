@@ -6,7 +6,7 @@ import styles from "./banner.module.css"
 import { useSession } from 'next-auth/react';
 
 export default function Banner () {
-    const covers = ['/img/cover.jpg', '/img/cover2.jpg', '/img/cover3.jpg', '/img/cover4.jpg', '/img/cover5.jpg']
+    const covers = ['/img/banner/1.jpg', '/img/banner/2.jpg', '/img/banner/3.jpg', '/img/banner/4.jpg', '/img/banner/5.jpg']
     const [index, setIndex] = useState(0)
     const router = useRouter()
 

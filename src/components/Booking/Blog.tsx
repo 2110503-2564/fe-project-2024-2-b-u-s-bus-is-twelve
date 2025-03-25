@@ -18,7 +18,7 @@ export default function Blog() {
         <div>
             <div className="relative aspect-[2/3] w-full mb-4 overflow-hidden rounded-lg">
               <Image
-                src="/img/cover.jpg"
+                src="/img/travel.jpg"
                 alt="Travel Destination"
                 fill
                 className="object-cover hover:scale-105 transition-all duration-500"
@@ -45,7 +45,7 @@ export default function Blog() {
 
           <div className="relative">
             <Image
-              src="/img/cover2.jpg"
+              src="/img/mountain.jpg"
               alt="Mountain Adventure"
               width={400}
               height={300}

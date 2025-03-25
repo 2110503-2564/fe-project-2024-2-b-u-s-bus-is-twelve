@@ -8,15 +8,15 @@ import { useSession } from 'next-auth/react';
 export default function Banner2 () {
 
     return (
-        <div className="relative h-[400px] w-full">
+        <div className={styles.banner}>
         <Image
-            src="/img/cover5.jpg"
+            src="/img/banner/6.jpg"
             alt="cover"
             fill
             priority
             className="object-cover"
         />
-        <div className="absolute top-[150px] w-full text-center text-white z-20">
+        <div className="absolute top-[200px] w-full text-center text-white z-20">
             <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold leading-tight font-playfair">
             Let's Book Your Dream Hotel Today!
             </h1>
