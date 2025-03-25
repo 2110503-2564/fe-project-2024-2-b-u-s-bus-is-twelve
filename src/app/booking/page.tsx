@@ -9,8 +9,10 @@ import dayjs, { Dayjs } from "dayjs";
 import Banner2 from "@/components/ViewHotels/Banner2";
 import Rating from "@/components/Booking/Rating";
 import Blog from "@/components/Booking/Blog";
+import { useSession } from "next-auth/react";
 
 export default function Booking() {
+  const { data: session } = useSession();
   const dispatch = useDispatch();
 
   const [nameLastname, setNameLastname] = useState("");
@@ -29,24 +31,34 @@ export default function Booking() {
     }
 
     const bookingData = {
-      name: nameLastname,
-      telephone: tel,
+      nameLastname: nameLastname,
+      tel: tel,
       night: night,
       hotel: hotel,
       bookingDate: bookDate.format("YYYY-MM-DD"),
     };
+    console.log("bookingData", bookingData);
 
     try {
       const response = await fetch("http://localhost:5000/api/v1/bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${session?.user.token}`
         },
         body: JSON.stringify(bookingData),
       });
+      
+      const result = await response.json();
 
       if (!response.ok) {
-        throw new Error("Booking failed");
+        if (result.message?.includes("booking limit")) {
+          setErrorMsg(result.message); // Show limit error message
+        } else {
+          setErrorMsg("Booking failed.");
+        }
+        setSuccessMsg("");
+        return;
       }
 
       dispatch(addBooking(bookingData));
@@ -136,12 +148,12 @@ export default function Booking() {
           }
         >
           <MenuItem value="" disabled>Select Hotel</MenuItem>
-          <MenuItem value="AnnaHotel">安娜 HOTEL</MenuItem>
-          <MenuItem value="MerryHouse">Merry House</MenuItem>
+          <MenuItem value="安娜 HOTEL">安娜 HOTEL</MenuItem>
+          <MenuItem value="Merry House">Merry House</MenuItem>
           <MenuItem value="Cozy Days Hotel">Cozy Days Hotel</MenuItem>
           <MenuItem value="Civic Haus">Civic Haus</MenuItem>
-          <MenuItem value="CozyHouse">Cozy House</MenuItem>
-          <MenuItem value="SeabreezeInn">Seabreeze Inn</MenuItem>
+          <MenuItem value="Cozy House">Cozy House</MenuItem>
+          <MenuItem value="Seabreeze Inn">Seabreeze Inn</MenuItem>
         </Select>
 
         <LocalizationProvider dateAdapter={AdapterDayjs}>
