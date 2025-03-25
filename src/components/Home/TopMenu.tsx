@@ -82,7 +82,7 @@ export default function TopMenu() {
                 </Link>
                 ) : (
                 <Link
-                    href='/api/auth/register'
+                    href='/register'
                     className="w-[120px] text-center my-auto font-[sans-serif] text-[13pt] text-white hover:underline hover:text-[14pt] transform transition-all duration-200 hover:scale-105 "
                 >
                     Register

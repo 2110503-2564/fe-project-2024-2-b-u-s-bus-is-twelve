@@ -29,7 +29,7 @@ export default function RegisterPage() {
     }
 
     try {
-      const response = await fetch(`${process.env.BACKEND_URL}/api/v1/auth/register`, {
+      const response = await fetch("http://localhost:5000/api/v1/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,6 +42,8 @@ export default function RegisterPage() {
           role: "user",
         }),
       });
+      console.log("response",response);
+    
 
       if (!response.ok) {
         throw new Error("Registration failed");
@@ -139,7 +141,7 @@ export default function RegisterPage() {
 
         <p className="text-center text-sm mt-4">
           Already have an account?{" "}
-          <a href={`{process.env.BACKEND_URL}/api/auth/signin`} className="text-blue-600 hover:underline">
+          <a href="/signin" className="text-blue-600 hover:underline">
             Sign in
           </a>
         </p>
