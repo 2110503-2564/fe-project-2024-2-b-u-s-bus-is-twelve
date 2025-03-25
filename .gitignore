@@ -5,6 +5,17 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+.env.local
+
+#cy
+/cypress
+src/components/*.cy.tsx
+cypress.config.ts
+
+#jess
+/tests
+jest.config.js
+jest.setup.js
 
 # testing
 /coverage

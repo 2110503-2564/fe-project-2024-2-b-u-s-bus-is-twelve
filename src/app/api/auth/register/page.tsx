@@ -29,7 +29,7 @@ export default function RegisterPage() {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/v1/auth/register", {
+      const response = await fetch(`${process.env.BACKEND_URL}/api/v1/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export default function RegisterPage() {
       setSuccessMsg("Registration successful! Redirecting to login...");
       setErrorMsg("");
       setTimeout(() => {
-        window.location.href = "http://localhost:3000/api/auth/signin";
+        window.location.href = `${process.env.FRONTEND_URL}/api/auth/signin`;
       }, 1500);
     } catch (err) {
       setErrorMsg("Something went wrong during registration.");
