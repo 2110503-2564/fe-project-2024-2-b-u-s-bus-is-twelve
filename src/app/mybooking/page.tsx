@@ -6,7 +6,6 @@ import dayjs from 'dayjs';
 import Banner3 from '@/components/MyBooking/Banner3';
 
 
-
 type Hotel = {
   _id: string;
   name: string;
@@ -98,7 +97,7 @@ export default function MyBooking() {
         throw new Error("Failed to update booking");
       }
   
-      console.log("Booking updated successfully");
+      alert("Booking updated successfully");
     } catch (error) {
       console.error("Error updating booking:", error); 
     }
@@ -121,7 +120,7 @@ export default function MyBooking() {
         throw new Error('Failed to delete booking');
       }
   
-      console.log('Booking deleted successfully');
+      alert('Booking deleted successfully');
     } catch (error) {
       console.error('Error deleting booking:', error);
     }
