@@ -40,7 +40,7 @@ export default function Booking() {
     console.log("bookingData", bookingData);
 
     try {
-      const response = await fetch(`${process.env.BACKEND_URL}api/v1/bookings`, {
+      const response = await fetch("https://bus-frontend-wine.vercel.app/api/v1/bookings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
