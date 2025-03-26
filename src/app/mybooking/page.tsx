@@ -36,7 +36,7 @@ export default function MyBooking() {
       if (!session) return;
 
       try {
-        const res = await fetch(`${process.env.BACKEND_URL}/api/v1/bookings/`, {
+        const res = await fetch("https://bus-frontend-wine.vercel.app/api/v1/bookings/", {
           headers: {
             Authorization: `Bearer ${session.user.token}`,
           },
@@ -58,7 +58,7 @@ export default function MyBooking() {
 
     const fetchHotels = async () => {
       try {
-        const res = await fetch(`${process.env.BACKEND_URL}/api/v1/hotels`);
+        const res = await fetch("https://bus-frontend-wine.vercel.app/api/v1/hotels");
         const data = await res.json();
         if (res.ok) setHotels(data.data);
       } catch (err) {
@@ -78,7 +78,7 @@ export default function MyBooking() {
     hotel: string | { _id: string };
   }) => {
     try {
-      const res = await fetch(`${process.env.BACKEND_URL}/api/v1/bookings/${bookingId}`, {
+      const res = await fetch(`https://bus-frontend-wine.vercel.app/api/v1/bookings/${bookingId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -109,7 +109,7 @@ export default function MyBooking() {
     if (!confirmed) return;
   
     try {
-      const res = await fetch(`${process.env.BACKEND_URL}/api/v1/bookings/${bookingId}`, {
+      const res = await fetch(`https://bus-frontend-wine.vercel.app/api/v1/bookings/${bookingId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${session?.user?.token}`, // ป้องกัน error ถ้า session ยังไม่มีค่า

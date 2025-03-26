@@ -52,7 +52,7 @@ export default function RegisterPage() {
       setSuccessMsg("Registration successful! Redirecting to login...");
       setErrorMsg("");
       setTimeout(() => {
-        window.location.href = `${process.env.FRONTEND_URL}/api/auth/signin`;
+        window.location.href = "/signin";
       }, 1500);
     } catch (err) {
       setErrorMsg("Something went wrong during registration.");
