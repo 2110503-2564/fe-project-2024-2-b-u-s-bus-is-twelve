@@ -6,6 +6,7 @@ import dayjs from 'dayjs';
 import Banner3 from '@/components/MyBooking/Banner3';
 
 
+
 type Hotel = {
   _id: string;
   name: string;
